@@ -102,4 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-./video
+
+# ignore video sources
+video/
