@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> demo </title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/video.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Demo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">demo1<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">demo2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">demo3</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="svg container">
+        </div>
+
+        <div class="container" id='player'>
+            <div align="center">
+                <video id='video-element'>
+                    <source src="./video/Shaun-the-Sheep-The-Movie-Official-Trailer.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+            <div class="row" id="progress-bar-wrapper">
+                <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+            </div>
+            <div id='controls' class="row">
+                <div class="col-1 progress-control">
+                    <div class="row">
+<!--                         <div class="col-3">
+                        </div> -->
+                        <div class="col-4">
+                            <button id='btn-replay' class='replay' title='replay' accesskey="R" onclick='replayVideo();'>Replay</button>
+                        </div>
+                        <div class="col-4">
+                            <button id='btn-play-pause' class='play' title='play' accesskey="P" onclick='playPauseVideo();'>Play</button>
+                        </div>
+                        <div class="col-4">
+                            <button id='btn-stop' class='stop' title='stop' accesskey="X" onclick='stopVideo();'>Stop</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 duration">
+                    <p><font id="now-time">00:00</font>/<font id="duration">00:00</font></p>
+                </div>
+                <div class="col-1 mute-control">
+                    <div class="row">
+                        <div class="col-4">
+                            <button id='btn-mute' class='mute' title='mute' onclick='muteVolume();'>Mute</button>
+                        </div>
+<!--                         <div class="col-1">
+                            <button id='btn-full-screen' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen();'>[&nbsp;&nbsp;]</button>
+                        </div> -->
+
+                        <div class="col-7">
+                            <input type="range" id="volume-bar" title="volume" min="0" max="1" step="0.1" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                </div>
+                <div class="col-1 speed-control">
+                    <div class="row">                      
+                        <div class="col-4">
+                            <button id='btn-faster' class='faster' title='faster' onclick='fasterSpeed();'>Faster</button>
+                        </div>
+                        <div class="col-4">
+                            <button id='btn-slower' class='slower' title='slower' onclick='slowerSpeed();'>Slower</button>
+                        </div>
+                        <div class="col-4">
+                            <p id="speed">1.0x</p>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div> 
+        <div style="clear:both"></div>
+
+<!--         <div class="container video-player" aligh="center">
+            <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item" controls>
+                      <source src="./Shaun-the-Sheep-The-Movie-Official-Trailer.mp4" type="video/mp4">
+                      Your browser does not support HTML5 video.
+                </video>
+                <button>
+                </button>
+            </div>
+        </div> -->
+        <script src="./js/video.js"></script>
+    </body> 
+</html>
