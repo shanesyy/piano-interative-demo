@@ -106,3 +106,6 @@ venv.bak/
 
 # ignore video sources
 video/
+
+# ignore .DS_Store
+**/.DS_Store
